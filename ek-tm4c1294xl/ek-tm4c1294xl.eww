@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\driverlib\driverlib.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\enet_io\enet_io.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\enet_lwip\enet_lwip.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\enet_uip\enet_uip.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\enet_weather\enet_weather.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\onion_led_array\onion_led_array.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\onion_template\onion_project.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\onionlib\onionlib.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\light_demo\light_demo.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\printer_demo\printer_demo.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>All Examples</name>
+      <member>
+        <project>driverlib</project>
+        <configuration>Debug</configuration>
+      </member>
+      <member>
+        <project>enet_io</project>
+        <configuration>Debug</configuration>
+      </member>
+      <member>
+        <project>enet_lwip</project>
+        <configuration>Debug</configuration>
+      </member>
+      <member>
+        <project>enet_uip</project>
+        <configuration>Debug</configuration>
+      </member>
+      <member>
+        <project>enet_weather</project>
+        <configuration>Debug</configuration>
+      </member>
+      <member>
+        <project>onionlib</project>
+        <configuration>Debug</configuration>
+      </member>
+      <member>
+        <project>light_demo</project>
+        <configuration>Debug</configuration>
+      </member>
+      <member>
+        <project>printer_demo</project>
+        <configuration>Debug</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

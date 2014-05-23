@@ -1,0 +1,890 @@
+###############################################################################
+#
+# IAR ELF Linker V7.10.3.6832/W32 for ARM                 18/Apr/2014  13:19:05
+# Copyright 2007-2014 IAR Systems AB.
+#
+#    Output file  =  G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Exe\qs_iot.out
+#    Map file     =  
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\List\qs_iot.map
+#    Command line =  
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\buttons.o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\cmdline.o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\commands.o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\driverlib\ewarm\Exe\driverlib.a
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\eth_client_lwip.o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\exosite.o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\exosite_hal_lwip.o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\exosite_meta.o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\flash_pb.o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\http.o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\locator.o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\lwiplib.o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\pinout.o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\qs_iot.o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\requests.o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\ringbuf.o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\startup_ewarm.o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\stats.o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\tictactoe.o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\uartstdio.o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj\ustdlib.o --redirect
+#        _Printf=_PrintfTiny --redirect _Scanf=_ScanfSmall -o
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Exe\qs_iot.out --map
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\List\qs_iot.map --config
+#        G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\qs_iot.icf --semihosting --entry
+#        __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at start of [0x00000000-0x000fffff] { ro section .intvec };
+"P1":  place in [from 0x00000000 to 0x000fffff] { ro };
+"P2":  place in [from 0x20000000 to 0x2003ffff] { rw, block HEAP };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A1":                                      0x200
+  .intvec            const    0x00000000   0x200  startup_ewarm.o [1]
+                            - 0x00000200   0x200
+
+"P1":                                     0xaf02
+  .text              ro code  0x00000200  0x5a50  lwiplib.o [1]
+  .text              ro code  0x00005c50    0x14  memset.o [3]
+  .text              ro code  0x00005c64     0xc  memcpy.o [3]
+  .text              ro code  0x00005c70    0x36  strlen.o [6]
+  .text              ro code  0x00005ca6    0x22  zero_init3.o [6]
+  .text              ro code  0x00005cc8    0x42  strcmp_unaligned.o [6]
+  .text              ro code  0x00005d0c    0x62  memcmp_unaligned.o [6]
+  .text              ro code  0x00005d70   0x252  emac.o [4]
+  .text              ro code  0x00005fc4   0x184  interrupt.o [4]
+  .text              ro code  0x00006148   0x488  eth_client_lwip.o [1]
+  .text              ro code  0x000065d0    0x66  ABImemset.o [6]
+  .text              ro code  0x00006638    0x76  ABImemcpy_unaligned.o [6]
+  .text              ro code  0x000066b0   0x490  sysctl.o [4]
+  .text              ro code  0x00006b40    0x10  cpu.o [4]
+  .text              ro code  0x00006b50    0x14  flash.o [4]
+  .text              ro code  0x00006b64   0xf78  qs_iot.o [1]
+  .text              ro code  0x00007adc    0xf8  stats.o [1]
+  .text              ro code  0x00007bd4   0x580  uartstdio.o [1]
+  .text              ro code  0x00008154   0x760  exosite.o [1]
+  .text              ro code  0x000088b4   0x1ac  requests.o [1]
+  .text              ro code  0x00008a60    0x98  buttons.o [1]
+  .text              ro code  0x00008af8    0x64  cmdline.o [1]
+  .text              ro code  0x00008b5c   0x534  tictactoe.o [1]
+  .text              ro code  0x00009090   0x19c  pinout.o [1]
+  .text              ro code  0x0000922c   0x358  ustdlib.o [1]
+  .text              ro code  0x00009584    0xe4  exosite_meta.o [1]
+  .text              ro code  0x00009668   0x4b4  exosite_hal_lwip.o [1]
+  .text              ro code  0x00009b1c    0x6c  strncpy_unaligned.o [6]
+  .text              ro code  0x00009b88   0x2a0  gpio.o [4]
+  .text              ro code  0x00009e28     0x6  ABImemclr.o [6]
+  .text              ro code  0x00009e2e    0x2a  strncmp.o [3]
+  .text              ro code  0x00009e58   0x174  eeprom.o [4]
+  .text              ro code  0x00009fcc    0xd0  ringbuf.o [1]
+  .text              ro code  0x0000a09c   0x1ec  http.o [1]
+  .text              ro code  0x0000a288    0x28  systick.o [4]
+  .text              ro code  0x0000a2b0    0x1c  strcat.o [3]
+  .text              ro code  0x0000a2cc   0x6fc  commands.o [1]
+  .rodata            const    0x0000a9c8   0x27c  commands.o [1]
+  .rodata            const    0x0000ac44    0xd4  qs_iot.o [1]
+  .text              ro code  0x0000ad18    0xd4  packbits_init.o [6]
+  .text              ro code  0x0000adec     0x6  abort.o [3]
+  .text              ro code  0x0000adf4    0x14  exit.o [7]
+  .text              ro code  0x0000ae08    0x28  data_init.o [6]
+  .iar.init_table    const    0x0000ae30    0x2c  - Linker created -
+  .text              ro code  0x0000ae5c    0x1a  startup_ewarm.o [1]
+  .text              ro code  0x0000ae76     0xc  cstartup_M.o [6]
+  .text              ro code  0x0000ae84    0x1a  fpinit_M.o [5]
+  .text              ro code  0x0000aea0    0x1a  cmain.o [6]
+  .text              ro code  0x0000aeba     0x4  low_level_init.o [3]
+  .text              ro code  0x0000aebe     0x4  exit.o [3]
+  .text              ro code  0x0000aec4     0xa  cexit.o [6]
+  .rodata            const    0x0000aece     0x0  zero_init3.o [6]
+  .rodata            const    0x0000aece     0x0  packbits_init.o [6]
+  Initializer bytes  ro data  0x0000aece   0x234  <for P2 s0>
+                            - 0x0000b102  0xaf02
+
+"P2", part 1 of 3:                         0x924
+  P2 s0                       0x20000000   0x922  <Init block>
+    .data            inited   0x20000000   0x444  qs_iot.o [1]
+    .data            inited   0x20000444   0x250  lwiplib.o [1]
+    .data            inited   0x20000694    0xa8  commands.o [1]
+    .data            inited   0x2000073c    0x6c  lwiplib.o [1]
+    .data            inited   0x200007a8    0x50  http.o [1]
+    .data            inited   0x200007f8    0x48  tictactoe.o [1]
+    .data            inited   0x20000840    0x10  lwiplib.o [1]
+    .data            inited   0x20000850    0x10  qs_iot.o [1]
+    .data            inited   0x20000860    0x10  qs_iot.o [1]
+    .data            inited   0x20000870    0x10  qs_iot.o [1]
+    .data            inited   0x20000880    0x10  qs_iot.o [1]
+    .data            inited   0x20000890    0x10  qs_iot.o [1]
+    .data            inited   0x200008a0    0x10  qs_iot.o [1]
+    .data            inited   0x200008b0    0x10  qs_iot.o [1]
+    .data            inited   0x200008c0    0x10  qs_iot.o [1]
+    .data            inited   0x200008d0    0x10  qs_iot.o [1]
+    .data            inited   0x200008e0    0x10  qs_iot.o [1]
+    .data            inited   0x200008f0    0x10  qs_iot.o [1]
+    .data            inited   0x20000900     0xc  commands.o [1]
+    .data            inited   0x2000090c     0xc  lwiplib.o [1]
+    .data            inited   0x20000918     0x4  lwiplib.o [1]
+    .data            inited   0x2000091c     0x3  buttons.o [1]
+    .data            inited   0x20000920     0x2  lwiplib.o [1]
+                            - 0x20000922   0x922
+
+"P2", part 2 of 3:                        0xd7c0
+  .bss               zero     0x20000924  0x8020  lwiplib.o [1]
+  .bss               zero     0x20008944  0x2ed4  lwiplib.o [1]
+  .bss               zero     0x2000b818  0x1000  eth_client_lwip.o [1]
+  .bss               zero     0x2000c818   0x55c  exosite_hal_lwip.o [1]
+  .bss               zero     0x2000cd74   0x460  lwiplib.o [1]
+  .bss               zero     0x2000d1d4   0x400  uartstdio.o [1]
+  .bss               zero     0x2000d5d4   0x214  lwiplib.o [1]
+  .bss               zero     0x2000d7e8   0x200  requests.o [1]
+  .bss               zero     0x2000d9e8   0x100  http.o [1]
+  .bss               zero     0x2000dae8   0x100  requests.o [1]
+  .bss               zero     0x2000dbe8    0xec  lwiplib.o [1]
+  .bss               zero     0x2000dcd4    0xc8  lwiplib.o [1]
+  .bss               zero     0x2000dd9c    0x8c  qs_iot.o [1]
+  .bss               zero     0x2000de28    0x80  lwiplib.o [1]
+  .bss               zero     0x2000dea8    0x80  uartstdio.o [1]
+  .bss               zero     0x2000df28    0x64  qs_iot.o [1]
+  .bss               zero     0x2000df8c    0x4c  exosite.o [1]
+  .bss               zero     0x2000dfd8    0x38  eth_client_lwip.o [1]
+  .bss               zero     0x2000e010    0x34  lwiplib.o [1]
+  .bss               zero     0x2000e044    0x34  qs_iot.o [1]
+  .bss               zero     0x2000e078    0x24  cmdline.o [1]
+  .bss               zero     0x2000e09c    0x1c  uartstdio.o [1]
+  .bss               zero     0x2000e0b8     0x8  lwiplib.o [1]
+  .bss               zero     0x2000e0c0     0x8  qs_iot.o [1]
+  .bss               zero     0x2000e0c8     0x8  qs_iot.o [1]
+  .bss               zero     0x2000e0d0     0x8  qs_iot.o [1]
+  .bss               zero     0x2000e0d8     0x4  exosite_hal_lwip.o [1]
+  .bss               zero     0x2000e0dc     0x2  lwiplib.o [1]
+  .bss               zero     0x2000e0de     0x1  lwiplib.o [1]
+  .bss               zero     0x2000e0df     0x1  lwiplib.o [1]
+  .bss               zero     0x2000e0e0     0x1  lwiplib.o [1]
+                            - 0x2000e0e1  0xd7bd
+
+"P2", part 3 of 3:                        0x1000
+  .noinit            uninit   0x2000e0e4  0x1000  startup_ewarm.o [1]
+                            - 0x2000f0e4  0x1000
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0xd7bd:
+          0x20000924  0xd7bd
+
+Copy/packbits (__iar_packbits_init3)
+    1 source range, total size 0x234 (24% of destination):
+          0x0000aece   0x234
+    1 destination range, total size 0x922:
+          0x20000000   0x922
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  ro data  rw data
+    ------                 -------  -------  -------
+G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj: [1]
+    buttons.o                  152        1        3
+    cmdline.o                  100                36
+    commands.o               1 788      679      180
+    eth_client_lwip.o        1 160             4 152
+    exosite.o                1 888                76
+    exosite_hal_lwip.o       1 204             1 376
+    exosite_meta.o             228
+    http.o                     492       20      336
+    lwiplib.o               23 120      178   47 803
+    pinout.o                   412
+    qs_iot.o                 3 960      517    1 584
+    requests.o                 428               768
+    ringbuf.o                  208
+    startup_ewarm.o             26      512    4 096
+    stats.o                    248
+    tictactoe.o              1 332       17       72
+    uartstdio.o              1 408             1 180
+    ustdlib.o                  856
+    ------------------------------------------------
+    Total:                  39 010    1 924   61 662
+
+command line: [2]
+    ------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    abort.o                      6
+    exit.o                       4
+    low_level_init.o             4
+    memcpy.o                    12
+    memset.o                    20
+    strcat.o                    28
+    strncmp.o                   42
+    ------------------------------------------------
+    Total:                     116
+
+driverlib.a: [4]
+    cpu.o                       16
+    eeprom.o                   372
+    emac.o                     594
+    flash.o                     20
+    gpio.o                     672
+    interrupt.o                388
+    sysctl.o                 1 168
+    systick.o                   40
+    ------------------------------------------------
+    Total:                   3 270
+
+m7M_tlv.a: [5]
+    fpinit_M.o                  26
+    ------------------------------------------------
+    Total:                      26
+
+rt7M_tl.a: [6]
+    ABImemclr.o                  6
+    ABImemcpy_unaligned.o      118
+    ABImemset.o                102
+    cexit.o                     10
+    cmain.o                     26
+    cstartup_M.o                12
+    data_init.o                 40
+    memcmp_unaligned.o          98
+    packbits_init.o            212
+    strcmp_unaligned.o          66
+    strlen.o                    54
+    strncpy_unaligned.o        108
+    zero_init3.o                34
+    ------------------------------------------------
+    Total:                     886
+
+shb_l.a: [7]
+    exit.o                      20
+    ------------------------------------------------
+    Total:                      20
+
+    Gaps                        18                 1
+    Linker created                       44
+----------------------------------------------------
+    Grand Total:            43 346    1 968   61 663
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address    Size  Type      Object
+-----                      -------    ----  ----      ------
+?main                   0x0000aea1          Code  Gb  cmain.o [6]
+AddRequest              0x00008901    0x44  Code  Gb  requests.o [1]
+AddSyncRequest          0x000088b5    0x4c  Code  Gb  requests.o [1]
+AdvanceGameState        0x00008d19   0x136  Code  Gb  tictactoe.o [1]
+BufferFillToCharacter   0x0000a09d    0x22  Code  Lc  http.o [1]
+BufferFillToEOL         0x0000a0bf    0x2a  Code  Lc  http.o [1]
+ButtonsInit             0x00008ab3    0x36  Code  Gb  buttons.o [1]
+ButtonsPoll             0x00008a61    0x52  Code  Gb  buttons.o [1]
+CPUcpsid                0x00006b41     0x8  Code  Gb  cpu.o [4]
+CPUcpsie                0x00006b49     0x8  Code  Gb  cpu.o [4]
+CheckForUserCommands    0x00006ee9    0x4e  Code  Gb  qs_iot.o [1]
+CheckWinner             0x00008c4b    0x7e  Code  Gb  tictactoe.o [1]
+CmdLineProcess          0x00008af9    0x64  Code  Gb  cmdline.o [1]
+Cmd_activate            0x0000a305    0x18  Code  Gb  commands.o [1]
+Cmd_alert               0x0000a4f3    0x56  Code  Gb  commands.o [1]
+Cmd_clear               0x0000a3cf     0xe  Code  Gb  commands.o [1]
+Cmd_connect             0x0000a389    0x46  Code  Gb  commands.o [1]
+Cmd_getmac              0x0000a3dd     0xa  Code  Gb  commands.o [1]
+Cmd_help                0x0000a2cd    0x2e  Code  Gb  commands.o [1]
+Cmd_led                 0x0000a31d    0x6c  Code  Gb  commands.o [1]
+Cmd_setemail            0x0000a4b5    0x3e  Code  Gb  commands.o [1]
+Cmd_setproxy            0x0000a3e7    0xbe  Code  Gb  commands.o [1]
+Cmd_stats               0x0000a2fb     0xa  Code  Gb  commands.o [1]
+Cmd_tictactoe           0x0000a4a5    0x10  Code  Gb  commands.o [1]
+ConfigureADC0           0x00007007    0x48  Code  Gb  qs_iot.o [1]
+ConfigureTimer0         0x00006fb3    0x54  Code  Gb  qs_iot.o [1]
+DNSServerFound          0x00006185    0x36  Code  Lc  eth_client_lwip.o [1]
+EEPROMInit              0x00009eb1    0x3a  Code  Gb  eeprom.o [4]
+EEPROMProgram           0x00009f15    0x98  Code  Gb  eeprom.o [4]
+EEPROMRead              0x00009eeb    0x2a  Code  Gb  eeprom.o [4]
+EMACAddrGet             0x00005e3b    0x1e  Code  Gb  emac.o [4]
+EMACConfigGet           0x00005e0b    0x30  Code  Gb  emac.o [4]
+EMACConfigSet           0x00005ddf    0x2c  Code  Gb  emac.o [4]
+EMACFrameFilterSet      0x00005e59     0x8  Code  Gb  emac.o [4]
+EMACIntClear            0x00005f05    0x36  Code  Gb  emac.o [4]
+EMACIntEnable           0x00005e9b    0x3e  Code  Gb  emac.o [4]
+EMACIntStatus           0x00005ed9    0x2c  Code  Gb  emac.o [4]
+EMACPHYConfigSet        0x00005d85    0x5a  Code  Gb  emac.o [4]
+EMACPHYRead             0x00005f65    0x2c  Code  Gb  emac.o [4]
+EMACPHYWrite            0x00005f3b    0x2a  Code  Gb  emac.o [4]
+EMACReset               0x00005d71    0x14  Code  Gb  emac.o [4]
+EMACRxDMADescriptorListSet
+                        0x00005e69     0x6  Code  Gb  emac.o [4]
+EMACRxEnable            0x00005e8d     0xe  Code  Gb  emac.o [4]
+EMACTimestampIntStatus  0x00005fb3     0x8  Code  Gb  emac.o [4]
+EMACTxDMADescriptorListSet
+                        0x00005e6f     0x8  Code  Gb  emac.o [4]
+EMACTxDMAPollDemand     0x00005e61     0x8  Code  Gb  emac.o [4]
+EMACTxEnable            0x00005e77    0x16  Code  Gb  emac.o [4]
+EthClientAddrGet        0x000063e9     0x4  Code  Gb  eth_client_lwip.o [1]
+EthClientDHCPConnect    0x00006357    0x3e  Code  Gb  eth_client_lwip.o [1]
+EthClientDNSResolve     0x00006395    0x54  Code  Gb  eth_client_lwip.o [1]
+EthClientHostSet        0x00006407     0x8  Code  Gb  eth_client_lwip.o [1]
+EthClientInit           0x0000640f    0x78  Code  Gb  eth_client_lwip.o [1]
+EthClientMACAddrGet     0x000063ed    0x12  Code  Gb  eth_client_lwip.o [1]
+EthClientProxySet       0x000063ff     0x8  Code  Gb  eth_client_lwip.o [1]
+EthClientSend           0x000062ff    0x58  Code  Gb  eth_client_lwip.o [1]
+EthClientTCPConnect     0x00006271    0x68  Code  Gb  eth_client_lwip.o [1]
+EthClientTCPDisconnect  0x000062d9    0x26  Code  Gb  eth_client_lwip.o [1]
+EthClientTick           0x00006487    0x1e  Code  Gb  eth_client_lwip.o [1]
+Exosite_Activate        0x0000825f   0x162  Code  Gb  exosite.o [1]
+Exosite_GetCIK          0x000083e3    0x4c  Code  Gb  exosite.o [1]
+Exosite_Init            0x000081fb    0x64  Code  Gb  exosite.o [1]
+Exosite_Read            0x000084d5    0xdc  Code  Gb  exosite.o [1]
+Exosite_SetCIK          0x000083c7    0x1c  Code  Gb  exosite.o [1]
+Exosite_StatusCode      0x000081f3     0x8  Code  Gb  exosite.o [1]
+Exosite_Write           0x0000842f    0xa2  Code  Gb  exosite.o [1]
+ExtractValueByAlias     0x00008945    0x58  Code  Gb  requests.o [1]
+FaultISR                0x0000ae73     0x2  Code  Lc  startup_ewarm.o [1]
+FlashUserGet            0x00006b51     0xe  Code  Gb  flash.o [4]
+GPIODirModeSet          0x00009b89    0x28  Code  Gb  gpio.o [4]
+GPIOPadConfigSet        0x00009bb1    0xfe  Code  Gb  gpio.o [4]
+GPIOPinConfigure        0x00009d59    0x38  Code  Gb  gpio.o [4]
+GPIOPinTypeEthernetLED  0x00009ce9     0x4  Code  Gb  gpio.o [4]
+GPIOPinTypeGPIOInput    0x00009ced    0x14  Code  Gb  gpio.o [4]
+GPIOPinTypeGPIOOutput   0x00009d01     0xa  Code  Gb  gpio.o [4]
+GPIOPinTypeUART         0x00009d25    0x14  Code  Gb  gpio.o [4]
+GPIOPinTypeUSBAnalog    0x00009d39     0x4  Code  Gb  gpio.o [4]
+GPIOPinTypeUSBDigital   0x00009d3d    0x14  Code  Gb  gpio.o [4]
+GPIOPinWrite            0x00009caf     0x6  Code  Gb  gpio.o [4]
+GameInit                0x00008e6b    0x12  Code  Gb  tictactoe.o [1]
+GetBufferCount          0x00007bff    0x12  Code  Lc  uartstdio.o [1]
+GetEEPROMCIK            0x00006d11    0x48  Code  Gb  qs_iot.o [1]
+HTTPMessageTypeSet      0x0000a121    0xb4  Code  Gb  http.o [1]
+HTTPResponseParse       0x0000a1dd    0x80  Code  Gb  http.o [1]
+InStream_Read           0x0000ad19    0x22  Code  Lc  packbits_init.o [6]
+InitDMADescriptors      0x00005421    0xaa  Code  Gb  lwiplib.o [1]
+InsertRequest           0x0000a0e9    0x38  Code  Lc  http.o [1]
+IntDefaultHandler       0x0000ae75     0x2  Code  Lc  startup_ewarm.o [1]
+IntEnable               0x00006011    0x56  Code  Gb  interrupt.o [4]
+IntMasterDisable        0x00005fcd     0x6  Code  Gb  interrupt.o [4]
+IntMasterEnable         0x00005fc5     0x8  Code  Gb  interrupt.o [4]
+IntPriorityGroupingSet  0x00005fdb    0x12  Code  Gb  interrupt.o [4]
+IntPrioritySet          0x00005fed    0x24  Code  Gb  interrupt.o [4]
+IsBufferEmpty           0x00007bef    0x10  Code  Lc  uartstdio.o [1]
+IsBufferFull            0x00007bd5    0x1a  Code  Lc  uartstdio.o [1]
+LocateValidCIK          0x00006de3    0x1a  Code  Gb  qs_iot.o [1]
+NmiSR                   0x0000ae71     0x2  Code  Lc  startup_ewarm.o [1]
+PinoutSet               0x00009091   0x134  Code  Gb  pinout.o [1]
+PrintAllData            0x00006bc5    0xb6  Code  Gb  qs_iot.o [1]
+PrintConnectionHelp     0x00006c7b    0x96  Code  Gb  qs_iot.o [1]
+PrintMac                0x00006b95    0x30  Code  Gb  qs_iot.o [1]
+PrintStats              0x00006b65    0x30  Code  Gb  qs_iot.o [1]
+ProcessTurn             0x00008b5d    0x50  Code  Gb  tictactoe.o [1]
+ProvisionCIK            0x00006d59    0x8a  Code  Gb  qs_iot.o [1]
+Region$$Table$$Base     0x0000ae30           --   Gb  - Linker created -
+Region$$Table$$Limit    0x0000ae5c           --   Gb  - Linker created -
+ResetConnection         0x00006149    0x3c  Code  Lc  eth_client_lwip.o [1]
+ResetISR                0x0000ae5d     0xe  Code  Gb  startup_ewarm.o [1]
+RingBufFlush            0x00009ff9    0x1a  Code  Gb  ringbuf.o [1]
+RingBufFree             0x0000a027     0xe  Code  Gb  ringbuf.o [1]
+RingBufInit             0x0000a091     0xc  Code  Gb  ringbuf.o [1]
+RingBufRead             0x0000a04b    0x1c  Code  Gb  ringbuf.o [1]
+RingBufReadOne          0x0000a035    0x16  Code  Gb  ringbuf.o [1]
+RingBufUsed             0x0000a013    0x14  Code  Gb  ringbuf.o [1]
+RingBufWrite            0x0000a075    0x1c  Code  Gb  ringbuf.o [1]
+RingBufWriteOne         0x0000a067     0xe  Code  Gb  ringbuf.o [1]
+SetGameMode             0x00008cc9    0x4e  Code  Gb  tictactoe.o [1]
+ShowBoard               0x00008bad    0x9e  Code  Gb  tictactoe.o [1]
+StatPrintValue          0x00007b5f    0x56  Code  Gb  stats.o [1]
+StatRequestFormat       0x00007b0b    0x54  Code  Gb  stats.o [1]
+StatSetVal              0x00007add    0x2e  Code  Gb  stats.o [1]
+SyncWithExosite         0x0000899d    0xae  Code  Gb  requests.o [1]
+SysCtlClockFreqSet      0x00006755   0x1ea  Code  Gb  sysctl.o [4]
+SysCtlDelay             0x0000674d     0x8  Code  Gb  sysctl.o [4]
+SysCtlPeripheralEnable  0x00006731     0x8  Code  Gb  sysctl.o [4]
+SysCtlPeripheralReady   0x000066d1     0x8  Code  Gb  sysctl.o [4]
+SysCtlPeripheralReset   0x000066f1    0x40  Code  Gb  sysctl.o [4]
+SysTickEnable           0x0000a289     0xc  Code  Gb  systick.o [4]
+SysTickIntEnable        0x0000a295     0xc  Code  Gb  systick.o [4]
+SysTickIntHandler       0x00009669     0x6  Code  Gb  exosite_hal_lwip.o [1]
+SysTickPeriodSet        0x0000a2a1     0x8  Code  Gb  systick.o [4]
+TCPConnected            0x00006213    0x5e  Code  Gb  eth_client_lwip.o [1]
+TCPError                0x000061bb     0xe  Code  Gb  eth_client_lwip.o [1]
+TCPReceived             0x000061c9    0x38  Code  Gb  eth_client_lwip.o [1]
+TCPSent                 0x00006201    0x12  Code  Gb  eth_client_lwip.o [1]
+Timer0IntHandler        0x00006f43    0x70  Code  Gb  qs_iot.o [1]
+UARTFlushRx             0x00007fb5    0x20  Code  Gb  uartstdio.o [1]
+UARTFlushTx             0x00007fd5    0x30  Code  Gb  uartstdio.o [1]
+UARTPeek                0x00007f77    0x32  Code  Gb  uartstdio.o [1]
+UARTPrimeTransmit       0x00007c11    0x66  Code  Lc  uartstdio.o [1]
+UARTStdioConfig         0x00007c77    0x90  Code  Gb  uartstdio.o [1]
+UARTStdioIntHandler     0x00008005    0xee  Code  Gb  uartstdio.o [1]
+UARTgets                0x00007d89    0x52  Code  Gb  uartstdio.o [1]
+UARTprintf              0x00007f69     0xe  Code  Gb  uartstdio.o [1]
+UARTvprintf             0x00007ddb   0x184  Code  Gb  uartstdio.o [1]
+UARTwrite               0x00007d07    0x62  Code  Gb  uartstdio.o [1]
+UpdateButtons           0x00006e5f    0x38  Code  Gb  qs_iot.o [1]
+UpdateIndexAtomic       0x00009fcd    0x2c  Code  Lc  ringbuf.o [1]
+UpdateInternalTemp      0x00006dfd    0x62  Code  Gb  qs_iot.o [1]
+UpdateLEDs              0x00006e97    0x4a  Code  Gb  qs_iot.o [1]
+_EEPROMSectorMaskClear  0x00009e83    0x22  Code  Lc  eeprom.o [4]
+_EEPROMSectorMaskSet    0x00009e59    0x2a  Code  Lc  eeprom.o [4]
+_SysCtlMemTimingGet     0x000066b1    0x20  Code  Lc  sysctl.o [4]
+__aeabi_memclr          0x00009e29          Code  Gb  ABImemclr.o [6]
+__aeabi_memset          0x000065d1          Code  Gb  ABImemset.o [6]
+__cmain                 0x0000aea1          Code  Gb  cmain.o [6]
+__exit                  0x0000adf5    0x14  Code  Gb  exit.o [7]
+__iar_Memset            0x000065d1          Code  Gb  ABImemset.o [6]
+__iar_Memset_word       0x000065d9          Code  Gb  ABImemset.o [6]
+__iar_data_init3        0x0000ae09    0x28  Code  Gb  data_init.o [6]
+__iar_init_vfp          0x0000ae85          Code  Gb  fpinit_M.o [5]
+__iar_packbits_init3    0x0000ad3b    0xb2  Code  Gb  packbits_init.o [6]
+__iar_program_start     0x0000ae77          Code  Gb  cstartup_M.o [6]
+__iar_strcmp            0x00005cc9          Code  Gb  strcmp_unaligned.o [6]
+__iar_unaligned___aeabi_memcpy
+                        0x00006639          Code  Gb  ABImemcpy_unaligned.o [6]
+__iar_unaligned___aeabi_memcpy4
+                        0x00006659          Code  Gb  ABImemcpy_unaligned.o [6]
+__iar_unaligned___aeabi_memcpy8
+                        0x00006659          Code  Gb  ABImemcpy_unaligned.o [6]
+__iar_unaligned_memcmp  0x00005d0d          Code  Gb  memcmp_unaligned.o [6]
+__iar_unaligned_strcmp  0x00005cc9          Code  Gb  strcmp_unaligned.o [6]
+__iar_unaligned_strncpy
+                        0x00009b1d          Code  Gb  strncpy_unaligned.o [6]
+__iar_zero_init3        0x00005ca7    0x22  Code  Gb  zero_init3.o [6]
+__low_level_init        0x0000aebb     0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000   0x200  Data  Gb  startup_ewarm.o [1]
+_call_main              0x0000aead          Code  Gb  cmain.o [6]
+_exit                   0x0000aec5          Code  Gb  cexit.o [6]
+_main                   0x0000aeb7          Code  Gb  cmain.o [6]
+abort                   0x0000aded     0x6  Code  Gb  abort.o [3]
+ackno                   0x20000784     0x4  Data  Lc  lwiplib.o [1]
+arp_table               0x2000dcd4    0xc8  Data  Lc  lwiplib.o [1]
+arp_timer               0x00003e87    0x16  Code  Lc  lwiplib.o [1]
+autoip_arp_announce     0x0000434d    0x28  Code  Lc  lwiplib.o [1]
+autoip_arp_reply        0x00004591    0x8e  Code  Gb  lwiplib.o [1]
+autoip_network_changed  0x0000444b    0x20  Code  Gb  lwiplib.o [1]
+autoip_restart          0x00004343     0xa  Code  Lc  lwiplib.o [1]
+autoip_start            0x00004375    0x90  Code  Gb  lwiplib.o [1]
+autoip_start_probing    0x00004405    0x46  Code  Lc  lwiplib.o [1]
+autoip_stop             0x0000446b    0x10  Code  Gb  lwiplib.o [1]
+autoip_timer            0x00003ec9    0x14  Code  Lc  lwiplib.o [1]
+autoip_tmr              0x0000447b   0x10e  Code  Gb  lwiplib.o [1]
+connect_to_exosite      0x000085b5    0x38  Code  Gb  exosite.o [1]
+current_header          0x2000079c     0x4  Data  Gb  lwiplib.o [1]
+current_iphdr_dest      0x200007a4     0x4  Data  Gb  lwiplib.o [1]
+current_iphdr_src       0x200007a0     0x4  Data  Gb  lwiplib.o [1]
+current_netif           0x20000798     0x4  Data  Gb  lwiplib.o [1]
+dhcp_arp_reply          0x0000052d    0x5a  Code  Gb  lwiplib.o [1]
+dhcp_bind               0x00000645    0xc0  Code  Lc  lwiplib.o [1]
+dhcp_check              0x00000223    0x26  Code  Lc  lwiplib.o [1]
+dhcp_coarse_tmr         0x000002cd    0x4c  Code  Gb  lwiplib.o [1]
+dhcp_create_msg         0x00000cc5   0x100  Code  Lc  lwiplib.o [1]
+dhcp_delete_msg         0x00000dc5    0x16  Code  Lc  lwiplib.o [1]
+dhcp_discover           0x00000591    0x7e  Code  Lc  lwiplib.o [1]
+dhcp_fine_tmr           0x00000319    0x30  Code  Gb  lwiplib.o [1]
+dhcp_handle_ack         0x000003cb    0x78  Code  Lc  lwiplib.o [1]
+dhcp_network_changed    0x000004e3    0x4a  Code  Gb  lwiplib.o [1]
+dhcp_option             0x00000927    0x1e  Code  Lc  lwiplib.o [1]
+dhcp_option_byte        0x00000945    0x10  Code  Lc  lwiplib.o [1]
+dhcp_option_long        0x00000965    0x2a  Code  Lc  lwiplib.o [1]
+dhcp_option_short       0x00000955    0x10  Code  Lc  lwiplib.o [1]
+dhcp_option_trailer     0x00000ddb    0x34  Code  Lc  lwiplib.o [1]
+dhcp_parse_reply        0x000009a1   0x21a  Code  Lc  lwiplib.o [1]
+dhcp_rebind             0x00000781    0x48  Code  Lc  lwiplib.o [1]
+dhcp_reboot             0x000007d1    0x5c  Code  Lc  lwiplib.o [1]
+dhcp_recv               0x00000bbd   0x102  Code  Lc  lwiplib.o [1]
+dhcp_release            0x00000835    0xa6  Code  Gb  lwiplib.o [1]
+dhcp_renew              0x00000713    0x54  Code  Gb  lwiplib.o [1]
+dhcp_rx_options_given   0x2000e010     0xc  Data  Gb  lwiplib.o [1]
+dhcp_rx_options_val     0x2000e01c    0x28  Data  Gb  lwiplib.o [1]
+dhcp_select             0x00000249    0x84  Code  Lc  lwiplib.o [1]
+dhcp_set_state          0x00000917    0x10  Code  Lc  lwiplib.o [1]
+dhcp_start              0x00000443    0x96  Code  Gb  lwiplib.o [1]
+dhcp_stop               0x000008db    0x3c  Code  Gb  lwiplib.o [1]
+dhcp_timeout            0x00000349    0x82  Code  Lc  lwiplib.o [1]
+dhcp_timer_coarse       0x00003e9d    0x16  Code  Lc  lwiplib.o [1]
+dhcp_timer_fine         0x00003eb3    0x16  Code  Lc  lwiplib.o [1]
+dns_check_entry         0x00000f81    0x9e  Code  Lc  lwiplib.o [1]
+dns_enqueue             0x0000117f    0xaa  Code  Lc  lwiplib.o [1]
+dns_gethostbyname       0x00001229    0x8c  Code  Gb  lwiplib.o [1]
+dns_init                0x00000e0f    0x46  Code  Gb  lwiplib.o [1]
+dns_parse_name          0x00000ea1    0x22  Code  Lc  lwiplib.o [1]
+dns_payload             0x2000d5e0     0x4  Data  Lc  lwiplib.o [1]
+dns_payload_buffer      0x2000d5e4   0x204  Data  Lc  lwiplib.o [1]
+dns_pcb                 0x2000d5dc     0x4  Data  Lc  lwiplib.o [1]
+dns_recv                0x00001029   0x156  Code  Lc  lwiplib.o [1]
+dns_send                0x00000ec3    0xbe  Code  Lc  lwiplib.o [1]
+dns_seqno               0x2000e0de     0x1  Data  Lc  lwiplib.o [1]
+dns_servers             0x2000d5d4     0x8  Data  Lc  lwiplib.o [1]
+dns_setserver           0x00000e65    0x1c  Code  Gb  lwiplib.o [1]
+dns_table               0x2000cd74   0x460  Data  Lc  lwiplib.o [1]
+dns_timer               0x00003edd    0x16  Code  Lc  lwiplib.o [1]
+dns_tmr                 0x00000e81    0x1c  Code  Gb  lwiplib.o [1]
+etharp_arp_input        0x00004e65   0x1ae  Code  Lc  lwiplib.o [1]
+etharp_cached_entry     0x2000e0e0     0x1  Data  Lc  lwiplib.o [1]
+etharp_cleanup_netif    0x00004e2b    0x28  Code  Gb  lwiplib.o [1]
+etharp_find_entry       0x00004d29    0xd4  Code  Lc  lwiplib.o [1]
+etharp_free_entry       0x00004cc1    0x20  Code  Lc  lwiplib.o [1]
+etharp_output           0x0000504f   0x116  Code  Gb  lwiplib.o [1]
+etharp_output_to_arp_index
+                        0x00005013    0x3c  Code  Lc  lwiplib.o [1]
+etharp_query            0x00005169   0x10a  Code  Gb  lwiplib.o [1]
+etharp_raw              0x00005273    0xc8  Code  Gb  lwiplib.o [1]
+etharp_request          0x00005341    0x28  Code  Gb  lwiplib.o [1]
+etharp_send_ip          0x00004dfd    0x2e  Code  Lc  lwiplib.o [1]
+etharp_tmr              0x00004ce1    0x44  Code  Gb  lwiplib.o [1]
+ethbroadcast            0x00005c40     0x8  Data  Gb  lwiplib.o [1]
+ethernet_input          0x00005369    0x98  Code  Gb  lwiplib.o [1]
+ethzero                 0x00005c48     0x8  Data  Gb  lwiplib.o [1]
+exit                    0x0000aebf     0x4  Code  Gb  exit.o [3]
+exoHAL_EnableMeta       0x0000966f    0x18  Code  Gb  exosite_hal_lwip.o [1]
+exoHAL_EraseMeta        0x00009687     0x2  Code  Gb  exosite_hal_lwip.o [1]
+exoHAL_ExositeEnetEvents
+                        0x00009737   0x10e  Code  Gb  exosite_hal_lwip.o [1]
+exoHAL_ExositeInit      0x00009845    0x7a  Code  Gb  exosite_hal_lwip.o [1]
+exoHAL_ExositeProxySet  0x000098ff    0x22  Code  Gb  exosite_hal_lwip.o [1]
+exoHAL_ReadMetaItem     0x000096b1    0x28  Code  Gb  exosite_hal_lwip.o [1]
+exoHAL_ReadUUID         0x000098bf    0x40  Code  Gb  exosite_hal_lwip.o [1]
+exoHAL_ResetConnection  0x000096d9    0x56  Code  Gb  exosite_hal_lwip.o [1]
+exoHAL_ServerConnect    0x000099e9    0x20  Code  Gb  exosite_hal_lwip.o [1]
+exoHAL_SocketClose      0x00009921     0xc  Code  Gb  exosite_hal_lwip.o [1]
+exoHAL_SocketOpenTCP    0x0000992d    0xbc  Code  Gb  exosite_hal_lwip.o [1]
+exoHAL_SocketRecv       0x00009a53    0x7c  Code  Gb  exosite_hal_lwip.o [1]
+exoHAL_SocketSend       0x00009a09    0x4a  Code  Gb  exosite_hal_lwip.o [1]
+exoHAL_WriteMetaItem    0x00009689    0x28  Code  Gb  exosite_hal_lwip.o [1]
+exosite_initialized     0x2000dfd4     0x4  Data  Lc  exosite.o [1]
+exosite_meta_defaults   0x000095ad    0x2a  Code  Gb  exosite_meta.o [1]
+exosite_meta_init       0x00009585    0x28  Code  Gb  exosite_meta.o [1]
+exosite_meta_read       0x00009611    0x44  Code  Gb  exosite_meta.o [1]
+exosite_meta_write      0x000095d7    0x3a  Code  Gb  exosite_meta.o [1]
+exosite_provision_info  0x2000df8c    0x44  Data  Gb  exosite.o [1]
+flags                   0x2000073f     0x1  Data  Lc  lwiplib.o [1]
+g_RxDescList            0x20000840    0x10  Data  Gb  lwiplib.o [1]
+g_StellarisIFData       0x2000090c     0xc  Data  Lc  lwiplib.o [1]
+g_TxDescList            0x20000684    0x10  Data  Gb  lwiplib.o [1]
+g_bDisableEcho          0x2000e09c     0x1  Data  Lc  uartstdio.o [1]
+g_bGameActive           0x20000001     0x1  Data  Gb  qs_iot.o [1]
+g_bLinkActive           0x2000de29     0x1  Data  Lc  lwiplib.o [1]
+g_bOnline               0x20000002     0x1  Data  Gb  qs_iot.o [1]
+g_bPrintingData         0x20000000     0x1  Data  Gb  qs_iot.o [1]
+g_bUseProxy             0x2000c82c     0x1  Data  Gb  exosite_hal_lwip.o [1]
+g_cInput                0x20000044   0x400  Data  Gb  qs_iot.o [1]
+g_pRxDescriptors        0x20000564   0x120  Data  Gb  lwiplib.o [1]
+g_pTxDescriptors        0x20000444   0x120  Data  Gb  lwiplib.o [1]
+g_pcAlert               0x2000dd9c    0x8c  Data  Gb  qs_iot.o [1]
+g_pcContactEmail        0x2000df28    0x64  Data  Gb  qs_iot.o [1]
+g_pcGameInput           0x20000834     0xc  Data  Gb  tictactoe.o [1]
+g_pcHttpConnect         0x200007a8     0xc  Data  Lc  http.o [1]
+g_pcHttpDelete          0x200007cc     0x8  Data  Lc  http.o [1]
+g_pcHttpGet             0x200007b4     0x8  Data  Lc  http.o [1]
+g_pcHttpHead            0x200007d4     0x8  Data  Lc  http.o [1]
+g_pcHttpOptions         0x200007e4     0xc  Data  Lc  http.o [1]
+g_pcHttpPatch           0x200007f0     0x8  Data  Lc  http.o [1]
+g_pcHttpPost            0x200007bc     0x8  Data  Lc  http.o [1]
+g_pcHttpPut             0x200007c4     0x8  Data  Lc  http.o [1]
+g_pcHttpTrace           0x200007dc     0x8  Data  Lc  http.o [1]
+g_pcLocation            0x2000e044    0x34  Data  Gb  qs_iot.o [1]
+g_pcProxyAddress        0x2000c830    0x34  Data  Gb  exosite_hal_lwip.o [1]
+g_pcReadRequest         0x2000dae8   0x100  Data  Gb  requests.o [1]
+g_pcRequest             0x2000c864   0x100  Data  Gb  exosite_hal_lwip.o [1]
+g_pcResponse            0x2000d8e8   0x100  Data  Gb  requests.o [1]
+g_pcSuffixHttp10        0x0000a278    0x10  Data  Lc  http.o [1]
+g_pcTempData            0x2000d9e8   0x100  Data  Lc  http.o [1]
+g_pcUARTRxBuffer        0x2000dea8    0x80  Data  Lc  uartstdio.o [1]
+g_pcUARTTxBuffer        0x2000d1d4   0x400  Data  Lc  uartstdio.o [1]
+g_pcWriteRequest        0x2000d7e8   0x100  Data  Gb  requests.o [1]
+g_pfnTimerHandler       0x2000de70     0x4  Data  Gb  lwiplib.o [1]
+g_ppcAlertMessages      0x20000900     0xc  Data  Gb  commands.o [1]
+g_ppcArgv               0x2000e078    0x24  Data  Lc  cmdline.o [1]
+g_pppui32XTALtoVCO      0x000069e8   0x120  Data  Lc  sysctl.o [4]
+g_psCmdTable            0x20000694    0xa8  Data  Gb  commands.o [1]
+g_psDeviceStatistics    0x20000014    0x30  Data  Gb  qs_iot.o [1]
+g_pui32EnRegs           0x00006134    0x14  Data  Lc  interrupt.o [4]
+g_pui32GPIOBaseAddrs    0x00009d98    0x90  Data  Lc  gpio.o [4]
+g_pui32Priority         0x00006078    0x20  Data  Lc  interrupt.o [4]
+g_pui32Regs             0x00006098    0x9c  Data  Lc  interrupt.o [4]
+g_pui32VCOFrequencies   0x00006b38     0x8  Data  Lc  sysctl.o [4]
+g_pui32Xtals            0x0000697c    0x6c  Data  Lc  sysctl.o [4]
+g_pui8SendBuff          0x2000b818  0x1000  Data  Gb  eth_client_lwip.o [1]
+g_sAlert                0x200008f0    0x10  Data  Gb  qs_iot.o [1]
+g_sBoardState           0x200008d0    0x10  Data  Gb  qs_iot.o [1]
+g_sContactEmail         0x200008e0    0x10  Data  Gb  qs_iot.o [1]
+g_sEnet                 0x2000dfd8    0x38  Data  Gb  eth_client_lwip.o [1]
+g_sEnetBuffer           0x2000c964    0x10  Data  Gb  exosite_hal_lwip.o [1]
+g_sExosite              0x2000c818    0x14  Data  Gb  exosite_hal_lwip.o [1]
+g_sInternalTempC        0x20000880    0x10  Data  Gb  qs_iot.o [1]
+g_sInternalTempF        0x20000870    0x10  Data  Gb  qs_iot.o [1]
+g_sLEDD1                0x200008a0    0x10  Data  Gb  qs_iot.o [1]
+g_sLEDD2                0x200008b0    0x10  Data  Gb  qs_iot.o [1]
+g_sLocation             0x200008c0    0x10  Data  Gb  qs_iot.o [1]
+g_sNetIF                0x2000de2c    0x38  Data  Lc  lwiplib.o [1]
+g_sSW1Presses           0x20000850    0x10  Data  Gb  qs_iot.o [1]
+g_sSW2Presses           0x20000860    0x10  Data  Gb  qs_iot.o [1]
+g_sSecondsOnTime        0x20000890    0x10  Data  Gb  qs_iot.o [1]
+g_sXTALtoMEMTIM         0x00006b08    0x30  Data  Lc  sysctl.o [4]
+g_ui16ProxyPort         0x2000c82e     0x2  Data  Gb  exosite_hal_lwip.o [1]
+g_ui32ARPTimer          0x2000de80     0x4  Data  Lc  lwiplib.o [1]
+g_ui32AbnormalInts      0x2000e0bc     0x4  Data  Gb  lwiplib.o [1]
+g_ui32AutoIPTimer       0x2000de84     0x4  Data  Lc  lwiplib.o [1]
+g_ui32Base              0x2000e0b0     0x4  Data  Lc  uartstdio.o [1]
+g_ui32BoardState        0x200007fc     0x4  Data  Gb  tictactoe.o [1]
+g_ui32Col               0x20000808     0x4  Data  Gb  tictactoe.o [1]
+g_ui32DHCPCoarseTimer   0x2000de88     0x4  Data  Lc  lwiplib.o [1]
+g_ui32DHCPFineTimer     0x2000de8c     0x4  Data  Lc  lwiplib.o [1]
+g_ui32DNSTimer          0x2000de90     0x4  Data  Lc  lwiplib.o [1]
+g_ui32EEStatus          0x2000e0d8     0x4  Data  Gb  exosite_hal_lwip.o [1]
+g_ui32GWAddr            0x2000dea4     0x4  Data  Lc  lwiplib.o [1]
+g_ui32GameState         0x200007f8     0x1  Data  Gb  tictactoe.o [1]
+g_ui32HostTimer         0x2000de7c     0x4  Data  Lc  lwiplib.o [1]
+g_ui32IPAddr            0x2000de9c     0x4  Data  Lc  lwiplib.o [1]
+g_ui32IPMode            0x2000de98     0x4  Data  Lc  lwiplib.o [1]
+g_ui32InternalTempC     0x2000e0cc     0x4  Data  Gb  qs_iot.o [1]
+g_ui32InternalTempF     0x2000e0c8     0x4  Data  Gb  qs_iot.o [1]
+g_ui32LEDD1             0x2000e0d0     0x4  Data  Gb  qs_iot.o [1]
+g_ui32LEDD2             0x2000e0d4     0x4  Data  Gb  qs_iot.o [1]
+g_ui32LastState         0x20000800     0x4  Data  Gb  tictactoe.o [1]
+g_ui32LinkRetries       0x20000010     0x4  Data  Gb  qs_iot.o [1]
+g_ui32LinkTimer         0x2000de94     0x4  Data  Lc  lwiplib.o [1]
+g_ui32LocalTimer        0x2000de74     0x4  Data  Gb  lwiplib.o [1]
+g_ui32Mode              0x20000810     0x4  Data  Gb  tictactoe.o [1]
+g_ui32NetMask           0x2000dea0     0x4  Data  Lc  lwiplib.o [1]
+g_ui32NormalInts        0x2000e0b8     0x4  Data  Gb  lwiplib.o [1]
+g_ui32Player            0x2000080c     0x4  Data  Gb  tictactoe.o [1]
+g_ui32PortNum           0x2000e0b4     0x4  Data  Lc  uartstdio.o [1]
+g_ui32Row               0x20000804     0x4  Data  Gb  tictactoe.o [1]
+g_ui32SW1Presses        0x2000e0c0     0x4  Data  Gb  qs_iot.o [1]
+g_ui32SW2Presses        0x2000e0c4     0x4  Data  Gb  qs_iot.o [1]
+g_ui32SecondsOnTime     0x20000008     0x4  Data  Gb  qs_iot.o [1]
+g_ui32SysClock          0x2000000c     0x4  Data  Gb  qs_iot.o [1]
+g_ui32TCPTimer          0x2000de78     0x4  Data  Lc  lwiplib.o [1]
+g_ui32TimerIntCount     0x20000004     0x4  Data  Gb  qs_iot.o [1]
+g_ui32UARTBase          0x00008130     0xc  Data  Lc  uartstdio.o [1]
+g_ui32UARTInt           0x0000813c     0xc  Data  Lc  uartstdio.o [1]
+g_ui32UARTPeriph        0x00008148     0xc  Data  Lc  uartstdio.o [1]
+g_ui32UARTRxReadIndex   0x2000e0ac     0x4  Data  Lc  uartstdio.o [1]
+g_ui32UARTRxWriteIndex  0x2000e0a8     0x4  Data  Lc  uartstdio.o [1]
+g_ui32UARTTxReadIndex   0x2000e0a4     0x4  Data  Lc  uartstdio.o [1]
+g_ui32UARTTxWriteIndex  0x2000e0a0     0x4  Data  Lc  uartstdio.o [1]
+g_ui32WinConditions     0x20000814    0x20  Data  Gb  tictactoe.o [1]
+g_ui8ButtonStates       0x2000091c     0x1  Data  Lc  buttons.o [1]
+g_ui8Data               0x2000c974   0x400  Data  Gb  exosite_hal_lwip.o [1]
+g_ui8RequestSize        0x2000c82d     0x1  Data  Gb  exosite_hal_lwip.o [1]
+get_http_status         0x000085ed    0x32  Code  Gb  exosite.o [1]
+icmp_dest_unreach       0x00004787    0x70  Code  Gb  lwiplib.o [1]
+icmp_input              0x0000462b   0x148  Code  Gb  lwiplib.o [1]
+inet_chksum             0x00004859     0xc  Code  Gb  lwiplib.o [1]
+inet_chksum_pbuf        0x00004865    0x4a  Code  Gb  lwiplib.o [1]
+info_assemble           0x00008155    0x9e  Code  Gb  exosite.o [1]
+inseg                   0x20000744    0x10  Data  Lc  lwiplib.o [1]
+ip4_addr_isbroadcast    0x00004b8b    0x34  Code  Gb  lwiplib.o [1]
+ip_addr_any             0x0000458c     0x4  Data  Gb  lwiplib.o [1]
+ip_addr_broadcast       0x00000cc0     0x4  Data  Gb  lwiplib.o [1]
+ip_id                   0x2000e0dc     0x2  Data  Lc  lwiplib.o [1]
+ip_input                0x00004911   0x196  Code  Gb  lwiplib.o [1]
+ip_output               0x00004b49    0x30  Code  Gb  lwiplib.o [1]
+ip_output_if            0x00004aad    0x9c  Code  Gb  lwiplib.o [1]
+ip_route                0x000048af    0x44  Code  Gb  lwiplib.o [1]
+ipaddr_addr             0x00004bbf    0x14  Code  Gb  lwiplib.o [1]
+ipaddr_aton             0x00004bd3    0xee  Code  Gb  lwiplib.o [1]
+lfree                   0x2000092c     0x4  Data  Lc  lwiplib.o [1]
+lwIPEthernetIntHandler  0x00005ad7    0x46  Code  Gb  lwiplib.o [1]
+lwIPHostTimerHandler    0x000064a5   0x104  Code  Gb  eth_client_lwip.o [1]
+lwIPInit                0x000059d1    0xf2  Code  Gb  lwiplib.o [1]
+lwIPLocalIPAddrGet      0x00005b1d    0x10  Code  Gb  lwiplib.o [1]
+lwIPNetworkConfigChange
+                        0x00005bd5    0x12  Code  Gb  lwiplib.o [1]
+lwIPPrivateNetworkConfigChange
+                        0x00005b31    0x98  Code  Lc  lwiplib.o [1]
+lwIPServiceTimers       0x000058e1    0xea  Code  Lc  lwiplib.o [1]
+lwIPTimer               0x00005ac3    0x14  Code  Gb  lwiplib.o [1]
+lwip_htonl              0x0000020b    0x18  Code  Gb  lwiplib.o [1]
+lwip_htons              0x00000201     0xa  Code  Gb  lwiplib.o [1]
+lwip_init               0x000012b5    0x16  Code  Gb  lwiplib.o [1]
+lwip_standard_chksum    0x000047fd    0x5c  Code  Lc  lwiplib.o [1]
+lwip_stats              0x2000dbe8    0xec  Data  Gb  lwiplib.o [1]
+main                    0x0000704f   0x146  Code  Gb  qs_iot.o [1]
+mem_free                0x00001301    0x94  Code  Gb  lwiplib.o [1]
+mem_init                0x000012cb    0x36  Code  Gb  lwiplib.o [1]
+mem_malloc              0x0000148b    0xfa  Code  Gb  lwiplib.o [1]
+mem_trim                0x00001395    0xf6  Code  Gb  lwiplib.o [1]
+memcpy                  0x00005c65     0xc  Code  Gb  memcpy.o [3]
+memp_free               0x00001665    0x38  Code  Gb  lwiplib.o [1]
+memp_init               0x00001585    0x6a  Code  Gb  lwiplib.o [1]
+memp_malloc             0x00001611    0x54  Code  Gb  lwiplib.o [1]
+memp_memory             0x20008964  0x2eb4  Data  Lc  lwiplib.o [1]
+memp_num                0x000015f0    0x10  Data  Lc  lwiplib.o [1]
+memp_sizes              0x00001600    0x10  Data  Lc  lwiplib.o [1]
+memp_tab                0x20008944    0x20  Data  Lc  lwiplib.o [1]
+memset                  0x00005c51    0x14  Code  Gb  memset.o [3]
+netif_add               0x0000169d    0x46  Code  Gb  lwiplib.o [1]
+netif_default           0x2000de64     0x4  Data  Gb  lwiplib.o [1]
+netif_list              0x20000758     0x4  Data  Gb  lwiplib.o [1]
+netif_num               0x2000073c     0x1  Data  Lc  lwiplib.o [1]
+netif_set_addr          0x000016e3    0x1e  Code  Gb  lwiplib.o [1]
+netif_set_down          0x0000178f    0x1a  Code  Gb  lwiplib.o [1]
+netif_set_gw            0x0000175f     0x8  Code  Gb  lwiplib.o [1]
+netif_set_ipaddr        0x00001701    0x5e  Code  Gb  lwiplib.o [1]
+netif_set_link_down     0x000017e9    0x12  Code  Gb  lwiplib.o [1]
+netif_set_link_up       0x000017a9    0x40  Code  Gb  lwiplib.o [1]
+netif_set_netmask       0x00001767     0x8  Code  Gb  lwiplib.o [1]
+netif_set_up            0x0000176f    0x20  Code  Gb  lwiplib.o [1]
+next_timeout            0x2000de68     0x4  Data  Lc  lwiplib.o [1]
+pbuf_alloc              0x00001829   0x122  Code  Gb  lwiplib.o [1]
+pbuf_cat                0x00001a73    0x26  Code  Gb  lwiplib.o [1]
+pbuf_chain              0x00001a99    0x10  Code  Gb  lwiplib.o [1]
+pbuf_clen               0x00001a49    0x10  Code  Gb  lwiplib.o [1]
+pbuf_copy               0x00001aa9    0x92  Code  Gb  lwiplib.o [1]
+pbuf_copy_partial       0x00001b3b    0x60  Code  Gb  lwiplib.o [1]
+pbuf_free               0x000019fb    0x4e  Code  Gb  lwiplib.o [1]
+pbuf_free_ooseq_pending
+                        0x2000de28     0x1  Data  Gb  lwiplib.o [1]
+pbuf_header             0x00001999    0x62  Code  Gb  lwiplib.o [1]
+pbuf_pool_is_empty      0x000017fb    0x16  Code  Lc  lwiplib.o [1]
+pbuf_realloc            0x0000194b    0x4e  Code  Gb  lwiplib.o [1]
+pbuf_ref                0x00001a59    0x1a  Code  Gb  lwiplib.o [1]
+pui32Stack              0x2000e0e4  0x1000  Data  Lc  startup_ewarm.o [1]
+ram                     0x20000924     0x4  Data  Lc  lwiplib.o [1]
+ram_end                 0x20000928     0x4  Data  Lc  lwiplib.o [1]
+ram_heap                0x20000930  0x8014  Data  Gb  lwiplib.o [1]
+raw_input               0x00001b9b    0x6a  Code  Gb  lwiplib.o [1]
+raw_pcbs                0x2000075c     0x4  Data  Lc  lwiplib.o [1]
+recv_data               0x20000788     0x4  Data  Lc  lwiplib.o [1]
+recv_flags              0x20000740     0x1  Data  Lc  lwiplib.o [1]
+sendLine                0x00008621   0x134  Code  Gb  exosite.o [1]
+seqno                   0x20000780     0x4  Data  Lc  lwiplib.o [1]
+status_code             0x2000dfd0     0x4  Data  Lc  exosite.o [1]
+strcat                  0x0000a2b1    0x1c  Code  Gb  strcat.o [3]
+strlen                  0x00005c71          Code  Gb  strlen.o [6]
+strncmp                 0x00009e2f    0x2a  Code  Gb  strncmp.o [3]
+sys_arch_protect        0x00005401     0xa  Code  Gb  lwiplib.o [1]
+sys_arch_unprotect      0x0000540b    0x10  Code  Gb  lwiplib.o [1]
+sys_timeout             0x00003f43    0x54  Code  Gb  lwiplib.o [1]
+sys_timeouts_init       0x00003ef3    0x50  Code  Gb  lwiplib.o [1]
+tcp_abandon             0x00001d4d    0x8e  Code  Gb  lwiplib.o [1]
+tcp_abort               0x00001de3     0x4  Code  Gb  lwiplib.o [1]
+tcp_active_pcbs         0x2000076c     0x4  Data  Gb  lwiplib.o [1]
+tcp_active_pcbs_changed
+                        0x2000073d     0x1  Data  Gb  lwiplib.o [1]
+tcp_alloc               0x0000236f   0x10a  Code  Gb  lwiplib.o [1]
+tcp_backoff             0x00002220    0x10  Data  Gb  lwiplib.o [1]
+tcp_bound_pcbs          0x20000764     0x4  Data  Gb  lwiplib.o [1]
+tcp_close               0x00001d3b    0x12  Code  Gb  lwiplib.o [1]
+tcp_close_shutdown      0x00001c31    0xf8  Code  Lc  lwiplib.o [1]
+tcp_connect             0x00001ebd    0xd6  Code  Gb  lwiplib.o [1]
+tcp_create_segment      0x00003497    0xae  Code  Lc  lwiplib.o [1]
+tcp_eff_send_mss        0x00002545    0x22  Code  Gb  lwiplib.o [1]
+tcp_enqueue_flags       0x000038e1    0xbe  Code  Gb  lwiplib.o [1]
+tcp_err                 0x00002493     0x6  Code  Gb  lwiplib.o [1]
+tcp_fasttmr             0x0000223b    0x54  Code  Gb  lwiplib.o [1]
+tcp_input               0x00002567   0x33e  Code  Gb  lwiplib.o [1]
+tcp_input_pcb           0x2000078c     0x4  Data  Gb  lwiplib.o [1]
+tcp_keepalive           0x00003d69    0x2c  Code  Gb  lwiplib.o [1]
+tcp_listen_input        0x000028b1    0xde  Code  Lc  lwiplib.o [1]
+tcp_listen_pcbs         0x20000768     0x4  Data  Gb  lwiplib.o [1]
+tcp_new                 0x00002485     0x4  Code  Gb  lwiplib.o [1]
+tcp_new_port            0x00001e5b    0x4c  Code  Lc  lwiplib.o [1]
+tcp_next_iss            0x0000252f     0xe  Code  Gb  lwiplib.o [1]
+tcp_oos_insert_segment  0x00002c7b    0x62  Code  Lc  lwiplib.o [1]
+tcp_output              0x000039e5   0x176  Code  Gb  lwiplib.o [1]
+tcp_output_alloc_header
+                        0x000033df    0x6e  Code  Lc  lwiplib.o [1]
+tcp_output_segment      0x00003b67    0xb8  Code  Lc  lwiplib.o [1]
+tcp_parseopt            0x00003367    0x78  Code  Lc  lwiplib.o [1]
+tcp_pbuf_prealloc       0x00003545    0x5a  Code  Lc  lwiplib.o [1]
+tcp_pcb_lists           0x00001eac    0x10  Data  Gb  lwiplib.o [1]
+tcp_pcb_purge           0x00002499    0x48  Code  Gb  lwiplib.o [1]
+tcp_pcb_remove          0x000024e1    0x4e  Code  Gb  lwiplib.o [1]
+tcp_persist_backoff     0x00002218     0x8  Data  Gb  lwiplib.o [1]
+tcp_port                0x20000920     0x2  Data  Lc  lwiplib.o [1]
+tcp_process             0x00002995   0x2d0  Code  Lc  lwiplib.o [1]
+tcp_process_refused_data
+                        0x00002295    0x68  Code  Gb  lwiplib.o [1]
+tcp_receive             0x00002cf1   0x638  Code  Lc  lwiplib.o [1]
+tcp_recv                0x00002489     0x6  Code  Gb  lwiplib.o [1]
+tcp_recv_null           0x0000234f    0x20  Code  Gb  lwiplib.o [1]
+tcp_recved              0x00001e25    0x36  Code  Gb  lwiplib.o [1]
+tcp_rexmit              0x00003ccf    0x4a  Code  Gb  lwiplib.o [1]
+tcp_rexmit_fast         0x00003d21    0x48  Code  Gb  lwiplib.o [1]
+tcp_rexmit_rto          0x00003ca5    0x2a  Code  Gb  lwiplib.o [1]
+tcp_rst                 0x00003c1f    0x80  Code  Gb  lwiplib.o [1]
+tcp_seg_copy            0x0000232b    0x24  Code  Gb  lwiplib.o [1]
+tcp_seg_free            0x0000230f    0x1c  Code  Gb  lwiplib.o [1]
+tcp_segs_free           0x000022fd    0x12  Code  Gb  lwiplib.o [1]
+tcp_send_empty_ack      0x000039a5    0x40  Code  Gb  lwiplib.o [1]
+tcp_send_fin            0x0000344d    0x42  Code  Gb  lwiplib.o [1]
+tcp_sent                0x0000248f     0x4  Code  Gb  lwiplib.o [1]
+tcp_slowtmr             0x00001fa5   0x272  Code  Gb  lwiplib.o [1]
+tcp_ticks               0x20000760     0x4  Data  Gb  lwiplib.o [1]
+tcp_timer               0x2000e0df     0x1  Data  Lc  lwiplib.o [1]
+tcp_timer_ctr           0x2000073e     0x1  Data  Lc  lwiplib.o [1]
+tcp_timer_needed        0x00003e61    0x1c  Code  Gb  lwiplib.o [1]
+tcp_tmp_pcb             0x20000774     0x4  Data  Gb  lwiplib.o [1]
+tcp_tmr                 0x00001c09    0x1e  Code  Gb  lwiplib.o [1]
+tcp_tw_pcbs             0x20000770     0x4  Data  Gb  lwiplib.o [1]
+tcp_update_rcv_ann_wnd  0x00001df1    0x34  Code  Gb  lwiplib.o [1]
+tcp_write               0x0000359f   0x336  Code  Gb  lwiplib.o [1]
+tcp_zero_window_probe   0x00003da1    0x82  Code  Gb  lwiplib.o [1]
+tcphdr                  0x2000077c     0x4  Data  Lc  lwiplib.o [1]
+tcpip_tcp_timer         0x00003e41    0x20  Code  Lc  lwiplib.o [1]
+tcpip_tcp_timer_active  0x20000790     0x4  Data  Lc  lwiplib.o [1]
+tcplen                  0x20000754     0x2  Data  Lc  lwiplib.o [1]
+timeouts_last_time      0x2000de6c     0x4  Data  Lc  lwiplib.o [1]
+tivaif_hwinit           0x000054cb    0xa4  Code  Lc  lwiplib.o [1]
+tivaif_init             0x000057b1    0x2e  Code  Gb  lwiplib.o [1]
+tivaif_interrupt        0x00005855    0x8a  Code  Gb  lwiplib.o [1]
+tivaif_process_phy_interrupt
+                        0x000057df    0x76  Code  Gb  lwiplib.o [1]
+tivaif_receive          0x00005699   0x10c  Code  Lc  lwiplib.o [1]
+tivaif_transmit         0x00005579   0x11c  Code  Lc  lwiplib.o [1]
+udp_bind                0x00004227    0x84  Code  Gb  lwiplib.o [1]
+udp_connect             0x000042ab    0x48  Code  Gb  lwiplib.o [1]
+udp_input               0x00003f97   0x18e  Code  Gb  lwiplib.o [1]
+udp_new                 0x00004323    0x1a  Code  Gb  lwiplib.o [1]
+udp_pcbs                0x20000794     0x4  Data  Gb  lwiplib.o [1]
+udp_port                0x20000756     0x2  Data  Lc  lwiplib.o [1]
+udp_recv                0x000042f3     0x6  Code  Gb  lwiplib.o [1]
+udp_remove              0x000042f9    0x2a  Code  Gb  lwiplib.o [1]
+udp_sendto              0x00004125    0x2a  Code  Gb  lwiplib.o [1]
+udp_sendto_if           0x0000415b    0xcc  Code  Gb  lwiplib.o [1]
+usprintf                0x00009441    0x16  Code  Gb  ustdlib.o [1]
+ustrcmp                 0x00009563     0x6  Code  Gb  ustdlib.o [1]
+ustrlen                 0x000094f9    0x10  Code  Gb  ustdlib.o [1]
+ustrncmp                0x00009531    0x32  Code  Gb  ustdlib.o [1]
+ustrncpy                0x0000922d    0x24  Code  Gb  ustdlib.o [1]
+ustrstr                 0x00009509    0x28  Code  Gb  ustdlib.o [1]
+ustrtoul                0x00009457    0xa2  Code  Gb  ustdlib.o [1]
+uvsnprintf              0x00009251   0x1ea  Code  Gb  ustdlib.o [1]
+
+
+[1] = G:\Onion\ti-tiva\ek-tm4c1294xl\qs_iot\ewarm\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = driverlib.a
+[5] = m7M_tlv.a
+[6] = rt7M_tl.a
+[7] = shb_l.a
+
+  43 346 bytes of readonly  code memory
+   1 968 bytes of readonly  data memory
+  61 663 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
